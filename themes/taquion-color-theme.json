@@ -1,0 +1,101 @@
+{
+  "name": "Taquion Theme",
+  "type": "dark",
+  "colors": {},
+  "tokenColors": [
+    // Pacotes e Módulos
+    {
+      "scope": [
+        "keyword.other.package.taquion",
+        "entity.name.package.taquion"
+      ],
+      "settings": {
+        "foreground": "#4EC9B0"
+      }
+    },
+    // Palavras-chave de Função e Tipo
+    {
+      "scope": [
+        "storage.type.function.taquion",
+        "storage.type.struct.taquion"
+      ],
+      "settings": {
+        "foreground": "#C586C0"
+      }
+    },
+    // Fluxo de Controle
+    {
+      "scope": "keyword.control.flow.taquion",
+      "settings": {
+        "foreground": "#569CD6"
+      }
+    },
+    // Operadores
+    {
+      "scope": "keyword.operator.taquion",
+      "settings": {
+        "foreground": "#D4D4D4"
+      }
+    },
+    // Tipos, Nomes de Tipos e Constantes
+    {
+      "scope": [
+        "storage.type.taquion",
+        "entity.name.type.taquion"
+      ],
+      "settings": {
+        "foreground": "#f54242",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "constant.other.user-defined.taquion",
+      "settings": {
+        "foreground": "#f54242"
+      }
+    },
+    // Strings
+    {
+      "scope": "string.quoted.double.taquion",
+      "settings": {
+        "foreground": "#FF7A78"
+      }
+    },
+    // Números e Booleanos
+    {
+      "scope": "constant.numeric.integer.taquion",
+      "settings": {
+        "foreground": "#B5CEA8"
+      }
+    },
+    {
+      "scope": "constant.language.boolean.taquion",
+      "settings": {
+        "foreground": "#569CD6"
+      }
+    },
+    // Definições e Chamadas de Função
+    {
+      "scope": [
+        "entity.name.function.taquion",
+        "meta.function-call.taquion"
+      ],
+      "settings": {
+        "foreground": "#DCDCAA"
+      }
+    },
+    // Variáveis
+    {
+      "scope": "variable.parameter.taquion",
+      "settings": {
+        "foreground": "#9CDCFE"
+      }
+    },
+    {
+      "scope": "variable.other.readonly.taquion",
+      "settings": {
+        "foreground": "#D4D4D4"
+      }
+    }
+  ]
+}

@@ -2,12 +2,16 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Taquion",
   "scopeName": "source.taquion",
+  "fileTypes": [
+    "taq"
+  ],
   "patterns": [
     { "include": "#comments" },
     { "include": "#packages" },
     { "include": "#keywords" },
+    { "include": "#literals" },
+    { "include": "#types" },
     { "include": "#strings" },
-    { "include": "#constants_and_literals" },
     { "include": "#functions" },
     { "include": "#variables" }
   ],
@@ -31,16 +35,16 @@
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.control.flow.taquion",
-          "match": "\\b(if|else|while|break|continue|return)\\b"
-        },
-        {
           "name": "storage.type.function.taquion",
-          "match": "\\b(func)\\b"
+          "match": "\\bfunc\\b"
         },
         {
           "name": "storage.type.struct.taquion",
-          "match": "\\b(type)\\b"
+          "match": "\\btype\\b"
+        },
+        {
+          "name": "keyword.control.flow.taquion",
+          "match": "\\b(if|else|while|break|continue|return)\\b"
         },
         {
           "name": "storage.modifier.taquion",
@@ -52,22 +56,7 @@
         }
       ]
     },
-    "strings": {
-      "name": "string.quoted.double.taquion",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
-        {
-          "name": "constant.character.escape.taquion",
-          "match": "\\\\."
-        },
-        {
-          "name": "variable.other.interpolated.taquion",
-          "match": "\\$\\{[a-zA-Z_][a-zA-Z0-9_.]*\\}"
-        }
-      ]
-    },
-    "constants_and_literals": {
+    "literals": {
       "patterns": [
         {
           "name": "constant.numeric.integer.taquion",
@@ -83,25 +72,54 @@
         }
       ]
     },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.taquion",
+          "match": "\\b(string|int|int8|int16|int32|int64|float|float32|float64|bool|char)\\b"
+        },
+        {
+          "name": "entity.name.type.taquion",
+          "match": "(?<=\\btype\\s+)[A-Za-z_][A-Za-z0-9_]*"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.taquion",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.taquion",
+          "match": "\\\\."
+        },
+        {
+          "name": "variable.other.interpolated.taquion",
+          "match": "\\$\\{[A-Za-z_][A-Za-z0-9_.]*\\}"
+        }
+      ]
+    },
     "functions": {
       "patterns": [
         {
-          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()",
-          "captures": {
-            "1": { "name": "entity.name.function.taquion" }
-          }
+          "name": "entity.name.function.taquion",
+          "match": "(?<=\\bfunc\\s+)[A-Za-z_][A-Za-z0-9_]*"
+        },
+        {
+          "name": "meta.function-call.taquion",
+          "match": "(?<=[A-Za-z_][A-Za-z0-9_]*)\\b\\("
         }
       ]
     },
     "variables": {
       "patterns": [
         {
-          "match": "(?<=\\bfunc\\s+[a-zA-Z_][a-zA-Z0-9_]*\\s*\\([^\\)]*)\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b(?=[^\\(]*\\))",
-          "name": "variable.parameter.taquion"
+          "name": "variable.parameter.taquion",
+          "match": "(?<=\\bfunc\\s+[A-Za-z_][A-Za-z0-9_]*\\s*\\([^\\)]*\\b)([A-Za-z_][A-Za-z0-9_]*)"
         },
         {
-          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b",
-          "name": "variable.other.readonly.taquion"
+          "name": "variable.other.readonly.taquion",
+          "match": "\\b[a-z_][A-Za-z0-9_]*\\b"
         }
       ]
     }

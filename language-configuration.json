@@ -1,61 +1,29 @@
 {
-  // Comentários de linha e bloco.
-  "comments": {
-    "lineComment": "//",
-    "blockComment": ["/*", "*/"]
-  },
-
-  // Pares de delimitadores.
-  "brackets": [
-    ["{", "}"],
-    ["[", "]"],
-    ["(", ")"]
+  "comments": { "lineComment":"//","blockComment":["/*","*/"] },
+  "brackets":[["{","}"],["[","]"],["(",")"]],
+  "autoClosingPairs":[
+    {"open":"{","close":"}"},{"open":"[","close":"]"},
+    {"open":"(","close":")"},{"open":"\"","close":"\"","notIn":["string"]}
   ],
-
-  // Fechamento automático ao digitar.
-  "autoClosingPairs": [
-    { "open": "{", "close": "}" },
-    { "open": "[", "close": "]" },
-    { "open": "(", "close": ")" },
-    { "open": "\"", "close": "\"", "notIn": ["string"] }
+  "surroundingPairs":[
+    {"open":"{","close":"}"},{"open":"[","close":"]"},
+    {"open":"(","close":")"},{"open":"\"","close":"\""}
   ],
-
-  // Envelopamento de seleção com pares.
-  "surroundingPairs": [
-    { "open": "{", "close": "}" },
-    { "open": "[", "close": "]" },
-    { "open": "(", "close": ")" },
-    { "open": "\"", "close": "\"" }
-  ],
-
-  // Recolhimento de código (folding).
   "folding": {
-    "markers": {
-      "start": "^.*\\{\\s*$|^\\s*//\\s*region\\b",
-      "end": "^\\s*\\}.*$|^\\s*//\\s*endregion\\b"
+    "markers":{
+      "start":"^.*\\{\\s*$|^\\s*//\\s*region\\b",
+      "end":"^\\s*\\}.*$|^\\s*//\\s*endregion\\b"
     }
   },
-
-  // Regras de indentação automática ao pressionar Enter.
-  "onEnterRules": [
+  "onEnterRules":[
     {
-      "beforeText": {
-        "pattern": "^\\s*(?:func|type|if|else|while).*\\{\\s*$"
-      },
-      "afterText": {
-        "pattern": "^\\s*\\}"
-      },
-      "action": {
-        "indent": "indentOutdent"
-      }
+      "beforeText":{ "pattern":"^\\s*(?:func|type|if|else|while).*\\{\\s*$" },
+      "afterText":{ "pattern":"^\\s*\\}" },
+      "action":{ "indent":"indentOutdent" }
     },
     {
-      "beforeText": {
-        "pattern": "^\\s*(?:func|type|if|else|while).*\\{\\s*$"
-      },
-      "action": {
-        "indent": "indent"
-      }
+      "beforeText":{ "pattern":"^\\s*(?:func|type|if|else|while).*\\{\\s*$" },
+      "action":{ "indent":"indent" }
     }
   ]
 }

@@ -1,93 +1,81 @@
 {
-  "Comentário de Bloco": {
+  "Block Comment": {
     "prefix": "comment",
     "body": [
       "// ------------------------------------",
-      "// ${1:Nome da Seção}",
+      "// ${1:Section Name}",
       "// ------------------------------------",
       "$0"
     ],
-    "description": "Cria um bloco de comentário para organizar o código"
+    "description": "A block comment for sectioning code."
   },
-  "Variável (let)": {
+  "Variable (let)": {
     "prefix": "let",
     "body": [
-      "let ${1:nome_da_variavel} = ${2:valor}"
+      "let ${1:variable_name} = ${2:value}"
     ],
-    "description": "Cria uma nova variável com 'let'"
+    "description": "Creates a new variable with `let`."
   },
-  "Constante (const)": {
+  "Constant (const)": {
     "prefix": "const",
     "body": [
-      "const ${1:NOME_DA_CONSTANTE} = ${2:valor}"
+      "const ${1:CONSTANT_NAME} = ${2:value}"
     ],
-    "description": "Cria uma nova constante com 'const'"
+    "description": "Creates a new constant with `const`."
   },
-  "Função Print": {
+  "Print Function": {
     "prefix": "print",
     "body": [
-      "print(${1:valor})"
+      "print(${1:value})"
     ],
-    "description": "Chama a função 'print' para exibir um valor no console"
+    "description": "Prints a value to the console."
   },
   "Array Literal": {
     "prefix": "array",
     "body": [
-      "let ${1:nome_do_array} = [${2:10, 20, 30}]"
+      "let ${1:array_name} = [${2:10, 20, 30}]"
     ],
-    "description": "Cria um novo array com valores iniciais"
+    "description": "Creates an array literal."
   },
-  "Loop While": {
+  "While Loop": {
     "prefix": "while",
     "body": [
-      "while (${1:condicao}) {",
+      "while (${1:condition}) {",
       "\t$0",
       "}"
     ],
-    "description": "Cria um loop 'while'"
+    "description": "A `while` loop."
   },
-  "Loop While para Array": {
-    "prefix": "while-array",
-    "body": [
-      "let i = 0",
-      "while (i < ${2:TAMANHO_DO_ARRAY}) {",
-      "\tlet elemento = ${1:nome_do_array}[i]",
-      "\t$0",
-      "\ti = i + 1",
-      "}"
-    ],
-    "description": "Cria um loop 'while' padronizado para iterar sobre um array"
-  },
-  "Declaração If": {
+  "If Statement": {
     "prefix": "if",
     "body": [
-      "if (${1:condicao}) {",
+      "if (${1:condition}) {",
       "\t$0",
       "}"
     ],
-    "description": "Cria uma declaração 'if'"
+    "description": "An `if` statement."
   },
-  "Declaração If/Else": {
+  "If/Else Statement": {
     "prefix": "ife",
     "body": [
-      "if (${1:condicao}) {",
-      "\t${2:bloco_if}",
+      "if (${1:condition}) {",
+      "\t${2:if_block}",
       "} else {",
       "\t$0",
       "}"
     ],
-    "description": "Cria uma declaração 'if/else'"
+    "description": "An `if/else` statement."
   },
-  "Função": {
+  "Function Declaration": {
     "prefix": "func",
     "body": [
-      "func ${1:nome}(${2:params}) {",
+      "func ${1:name}(${2:params}) {",
       "\t$0",
       "}"
     ],
-    "description": "Cria uma nova função"
+    "description": "Defines a new function."
   },
-  "Função Principal (main)": {
+  "Main Function": {
     "prefix": "main",
     "body": [
       "package main",
@@ -96,16 +84,16 @@
       "\t$0",
       "}"
     ],
-    "description": "Cria a função 'main' principal com a declaração de pacote"
+    "description": "The `package main` and `func main` boilerplate."
   },
-  "Tipo (type)": {
+  "Type Declaration": {
     "prefix": "type",
     "body": [
-      "type ${1:NomeTipo} {",
-      "\t${2:nome}: ${3:string}",
+      "type ${1:TypeName} {",
+      "\t${2:field}: ${3:string}",
       "\t$0",
       "}"
     ],
-    "description": "Cria uma definição de tipo (struct + métodos)"
+    "description": "Defines a new type."
   }
 }

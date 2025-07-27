@@ -1,0 +1,67 @@
+{
+    "name": "taquion-vscode",
+    "displayName": "Taquion",
+    "description": "Destaque de sintaxe, snippets inteligentes e configuração de linguagem profissional para Taquion.",
+    "version": "0.2.0",
+    "publisher": "MikeLanDSBR",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "keywords": [
+        "taquion",
+        "taq",
+        "language",
+        "syntax",
+        "compiler"
+    ],
+
+    "homepage": "https://github.com/MikeLanDSBR/taquion.git",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MikeLanDSBR/taquion.git"
+    },
+    "bugs": {
+        "url": "https://github.com/MikeLanDSBR/taquion/issues"
+    },
+
+    "icon": "icons/icon.png",
+
+    "license": "MIT",
+
+    "contributes": {
+        "languages": [
+            {
+                "id": "taquion",
+                "aliases": [
+                    "Taquion",
+                    "taquion"
+                ],
+                "extensions": [
+                    ".taq"
+                ],
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "./icons/taquion-file-icon.png",
+                    "dark": "./icons/taquion-file-icon.png"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "taquion",
+                "scopeName": "source.taquion",
+                "path": "./syntaxes/taquion.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "taquion",
+                "path": "./snippets/taquion.json"
+            }
+        ]
+    }
+}

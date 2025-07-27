@@ -1,103 +1,111 @@
 {
-	"Comentário de Bloco": {
-		"prefix": "comment",
-		"body": [
-			"// ------------------------------------",
-			"// ${1:Nome da Seção}",
-			"// ------------------------------------",
-			"$0"
-		],
-		"description": "Cria um bloco de comentário para organizar o código"
-	},
-	"Variável (let)": {
-		"prefix": "let",
-		"body": [
-			"let ${1:nome_da_variavel} = ${2:valor};"
-		],
-		"description": "Cria uma nova variável com 'let'"
-	},
-	"Constante (const)": {
-		"prefix": "const",
-		"body": [
-			"const ${1:NOME_DA_CONSTANTE} = ${2:valor};"
-		],
-		"description": "Cria uma nova constante com 'const'"
-	},
-	"Função Print": {
-		"prefix": "print",
-		"body": [
-			"print(${1:valor});"
-		],
-		"description": "Chama a função 'print' para exibir um valor no console"
-	},
-	"Array Literal": {
-		"prefix": "array",
-		"body": [
-			"let ${1:nome_do_array} = [${2:10, 20, 30}];"
-		],
-		"description": "Cria um novo array com valores iniciais"
-	},
-	"Loop While": {
-		"prefix": "while",
-		"body": [
-			"while (${1:condicao}) {",
-			"\t$0",
-			"}"
-		],
-		"description": "Cria um loop 'while'"
-	},
-	"Loop While para Array": {
-		"prefix": "while-array",
-		"body": [
-			"let i = 0;",
-			"while (i < ${2:TAMANHO_DO_ARRAY}) {",
-			"\tlet elemento = ${1:nome_do_array}[i];",
-			"\t$0",
-			"\ti = i + 1;",
-			"}"
-		],
-		"description": "Cria um loop 'while' padronizado para iterar sobre um array"
-	},
-	"Declaração If": {
-		"prefix": "if",
-		"body": [
-			"if (${1:condicao}) {",
-			"\t$0",
-			"}"
-		],
-		"description": "Cria uma declaração 'if'"
-	},
-	"Declaração If/Else": {
-		"prefix": "ife",
-		"body": [
-			"if (${1:condicao}) {",
-			"\t${2:bloco_if}",
-			"} else {",
-			"\t$0",
-			"}"
-		],
-		"description": "Cria uma declaração 'if/else'"
-	},
-	"Função": {
-		"prefix": "func",
-		"body": [
-			"func ${1:nome}(${2:params}) {",
-			"\t$0",
-			"\treturn 0;",
-			"}"
-		],
-		"description": "Cria uma nova função"
-	},
-	"Função Principal (main)": {
-		"prefix": "main",
-		"body": [
-			"package main",
-			"",
-			"func main() {",
-			"\t$0",
-			"\treturn 0;",
-			"}"
-		],
-		"description": "Cria a função 'main' principal com a declaração de pacote"
-	}
+  "Comentário de Bloco": {
+    "prefix": "comment",
+    "body": [
+      "// ------------------------------------",
+      "// ${1:Nome da Seção}",
+      "// ------------------------------------",
+      "$0"
+    ],
+    "description": "Cria um bloco de comentário para organizar o código"
+  },
+  "Variável (let)": {
+    "prefix": "let",
+    "body": [
+      "let ${1:nome_da_variavel} = ${2:valor}"
+    ],
+    "description": "Cria uma nova variável com 'let'"
+  },
+  "Constante (const)": {
+    "prefix": "const",
+    "body": [
+      "const ${1:NOME_DA_CONSTANTE} = ${2:valor}"
+    ],
+    "description": "Cria uma nova constante com 'const'"
+  },
+  "Função Print": {
+    "prefix": "print",
+    "body": [
+      "print(${1:valor})"
+    ],
+    "description": "Chama a função 'print' para exibir um valor no console"
+  },
+  "Array Literal": {
+    "prefix": "array",
+    "body": [
+      "let ${1:nome_do_array} = [${2:10, 20, 30}]"
+    ],
+    "description": "Cria um novo array com valores iniciais"
+  },
+  "Loop While": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condicao}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Cria um loop 'while'"
+  },
+  "Loop While para Array": {
+    "prefix": "while-array",
+    "body": [
+      "let i = 0",
+      "while (i < ${2:TAMANHO_DO_ARRAY}) {",
+      "\tlet elemento = ${1:nome_do_array}[i]",
+      "\t$0",
+      "\ti = i + 1",
+      "}"
+    ],
+    "description": "Cria um loop 'while' padronizado para iterar sobre um array"
+  },
+  "Declaração If": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condicao}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Cria uma declaração 'if'"
+  },
+  "Declaração If/Else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:condicao}) {",
+      "\t${2:bloco_if}",
+      "} else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Cria uma declaração 'if/else'"
+  },
+  "Função": {
+    "prefix": "func",
+    "body": [
+      "func ${1:nome}(${2:params}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Cria uma nova função"
+  },
+  "Função Principal (main)": {
+    "prefix": "main",
+    "body": [
+      "package main",
+      "",
+      "func main() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Cria a função 'main' principal com a declaração de pacote"
+  },
+  "Tipo (type)": {
+    "prefix": "type",
+    "body": [
+      "type ${1:NomeTipo} {",
+      "\t${2:nome}: ${3:string}",
+      "\t$0",
+      "}"
+    ],
+    "description": "Cria uma definição de tipo (struct + métodos)"
+  }
 }

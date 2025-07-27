@@ -2,7 +2,7 @@
     "name": "taquion-vscode",
     "displayName": "Taquion",
     "description": "Destaque de sintaxe, snippets inteligentes e configuração de linguagem profissional para Taquion.",
-    "version": "0.2.0",
+    "version": "0.2.2",
     "publisher": "MikeLanDSBR",
     "engines": {
         "vscode": "^1.80.0"

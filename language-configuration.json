@@ -1,61 +1,61 @@
 {
-    // Define como os comentários funcionam na linguagem.
-    "comments": {
-        "lineComment": "//",
-        "blockComment": ["/*", "*/"]
+  // Comentários de linha e bloco.
+  "comments": {
+    "lineComment": "//",
+    "blockComment": ["/*", "*/"]
+  },
+
+  // Pares de delimitadores.
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+
+  // Fechamento automático ao digitar.
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"", "notIn": ["string"] }
+  ],
+
+  // Envelopamento de seleção com pares.
+  "surroundingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"" }
+  ],
+
+  // Recolhimento de código (folding).
+  "folding": {
+    "markers": {
+      "start": "^.*\\{\\s*$|^\\s*//\\s*region\\b",
+      "end": "^\\s*\\}.*$|^\\s*//\\s*endregion\\b"
+    }
+  },
+
+  // Regras de indentação automática ao pressionar Enter.
+  "onEnterRules": [
+    {
+      "beforeText": {
+        "pattern": "^\\s*(?:func|type|if|else|while).*\\{\\s*$"
+      },
+      "afterText": {
+        "pattern": "^\\s*\\}"
+      },
+      "action": {
+        "indent": "indentOutdent"
+      }
     },
-
-    // Define os pares de caracteres que formam "blocos".
-    "brackets": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"]
-    ],
-
-    // Define quais caracteres devem ser fechados automaticamente ao digitar.
-    "autoClosingPairs": [
-        { "open": "{", "close": "}" },
-        { "open": "[", "close": "]" },
-        { "open": "(", "close": ")" }, // BUG CORRIGIDO: Estava fechando com "}"
-        { "open": "\"", "close": "\"", "notIn": ["string"] }
-    ],
-
-    // Permite selecionar um texto e digitar um caractere de abertura para "envelopar" o texto.
-    "surroundingPairs": [
-        { "open": "{", "close": "}" },
-        { "open": "[", "close": "]" },
-        { "open": "(", "close": ")" },
-        { "open": "\"", "close": "\"" }
-    ],
-
-    // Habilita o recolhimento (folding) de blocos de código.
-    "folding": {
-        "markers": {
-            "start": "^.*\\{\\s*$",
-            "end": "^\\s*\\}.*$"
-        }
-    },
-    
-    // Melhora a indentação automática ao pressionar Enter.
-    "onEnterRules": [
-        {
-            "beforeText": {
-                "pattern": "^\\s*(?:func|if|else|while).*\\{\\s*$"
-            },
-            "afterText": {
-                "pattern": "^\\s*\\}"
-            },
-            "action": {
-                "indent": "indentOutdent"
-            }
-        },
-        {
-            "beforeText": {
-                "pattern": "^\\s*(?:func|if|else|while).*\\{\\s*$"
-            },
-            "action": {
-                "indent": "indent"
-            }
-        }
-    ]
+    {
+      "beforeText": {
+        "pattern": "^\\s*(?:func|type|if|else|while).*\\{\\s*$"
+      },
+      "action": {
+        "indent": "indent"
+      }
+    }
+  ]
 }
